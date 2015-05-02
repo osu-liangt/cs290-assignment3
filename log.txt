@@ -13,3 +13,7 @@ Tasks: Finished object.js
 Start: Sat, 2 May 2015 11:30:00 -0600 
 End: Sat, 2 May 2015 14:03:38 -0600 
 Tasks: Finished functions.js
+
+Start: Sat, 2 May 2015 14:03:38 -0600 
+End: Sat, 2 May 2015 14:13:17 -0600 
+Tasks: Finished variables.js
