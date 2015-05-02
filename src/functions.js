@@ -13,7 +13,7 @@
 */
 
 //your code here
-
+uselessFunction = function() {return null;};
 //end your code
 
 var bar = 'not a function';
@@ -30,7 +30,18 @@ var barType = typeof bar;
 */
 
 //your code here
-
+bar = function(doubleArray) {
+	var i;
+	for (i = 0; i < doubleArray.length; i++) {
+		// Check if is a number
+		if (typeof doubleArray[i] != "number") {
+			return false;
+		}
+		// Otherwise, multiply it
+		doubleArray[i] *= 2;
+	}
+	return true;
+};
 //end your code
 
 /**
@@ -66,5 +77,27 @@ function GitLog(hash, date, message) {
 */
 
 //your code here
-
+function parseGit(logArray) {
+	// logArray is an array of strings
+	// return an array of gitlog objects
+	var GitLogArray = new Array(logArray.length);
+	var i, hash, date, message;
+	// RegExp searches
+	var hash_re = /^\w*/; //First group of alphanumeric chars
+	var date_re = /\s(.*?)\"/; //Everything between a space and a quote
+	var message_re = /\"(.*?)\"/; //Everything between quotes
+	for (i = 0; i < logArray.length; i++) {
+		// Alternative syntax:
+		// hash = logArray[i].match(hash_re)[0];
+		hash = hash_re.exec(logArray[i])[0];
+		date = new Date(date_re.exec(logArray[i])[0]); // JS Date object
+		message = message_re.exec(logArray[i])[0];
+		// To deal with annoying \" characters left over
+		// Gotta be a better way than this
+		message = message.replace(/\\/g, "");
+		message = message.replace(/\"/g, "");
+		GitLogArray[i] = new GitLog(hash, date, message);
+	}
+	return GitLogArray;
+};
 //end your code

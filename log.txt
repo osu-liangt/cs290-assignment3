@@ -5,3 +5,7 @@ Tasks: Started this log file
 Start: Thu, 30 Apr 2015 14:55:34 -0600
 End: Thu, 30 Apr 2015 15:05:14 -0600 
 Tasks: returnObjectLiteral in objects.js
+
+Start: Thu, 30 Apr 2015 15:05:14 -0600 
+End: Thu, 30 Apr 2015 15:41:55 -0600 
+Tasks: Finished object.js
